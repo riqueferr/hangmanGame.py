@@ -23,7 +23,6 @@ def ler_arquivo():
     secret_word = words[sorteio]
     return secret_word
 
-
 def inserir_caracteres_palavra_secreta(secret_word):
     qnt = len(secret_word)
     print(f'qnt: {qnt} - secret word: {secret_word}')
@@ -32,18 +31,14 @@ def inserir_caracteres_palavra_secreta(secret_word):
     print(list)
     return list
 
-
 def logica_forca(secret_word, list):
-    correct = False
     while True:
         correct = '_' not in list
         if correct:
             print(f'Deu sorte, mas acertou! A palavra é {secret_word.upper()}')
             break
-
         print(f'CASO SAIBA A RESPOSTA, FIQUE A VONTADE PARA DIGITAR!')
         letter = input('Qual a letra q vc quer?').upper()
-
         if letter == 'exit':
             break
         elif letter == secret_word:
@@ -56,7 +51,6 @@ def logica_forca(secret_word, list):
                     list[index_list] = letter
                 index_list += 1
             print(f'Por enquanto a palavra está assim> {list}')
-
 
 if __name__ == '__main__':
     jogar_forca()
